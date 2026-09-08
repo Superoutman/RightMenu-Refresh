@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "com.rightmenu.plugin.refresh",
+  "name": "Refresh",
+  "version": "1.0.0",
+  "apiVersion": "1.2",
+  "runtime": {
+    "kind": "javascript",
+    "entrypoint": "main.js"
+  },
+  "permissions": [
+    {
+      "capability": "ui.flashScreen",
+      "reason": "Displays the host-controlled nostalgic refresh flash when the user chooses Refresh."
+    }
+  ],
+  "actions": [
+    {
+      "id": "refresh",
+      "title": "Refresh",
+      "finderContexts": ["container"],
+      "localizedTitles": {
+        "en": "Refresh",
+        "zh-Hans": "刷新",
+        "zh-Hant": "重新整理",
+        "ja": "更新",
+        "ko": "새로 고침",
+        "de": "Aktualisieren",
+        "fr": "Actualiser"
+      }
+    }
+  ],
+  "uiContributions": []
+}

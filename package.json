@@ -1,0 +1,25 @@
+{
+  "name": "@rightmenu/refresh-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent nostalgic Refresh plugin for RightMenu",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:signed": "node scripts/build.mjs --signed",
+    "keygen": "node scripts/generate-signing-key.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run typecheck && node --import tsx --test tests/*.test.ts",
+    "verify:host": "node scripts/verify-host.mjs",
+    "verify": "npm test && npm run build:signed && npm run verify:host"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.2",
+    "esbuild": "0.28.1",
+    "tsx": "4.20.5",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
