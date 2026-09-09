@@ -2,7 +2,17 @@
   "schemaVersion": 1,
   "id": "com.rightmenu.plugin.refresh",
   "name": "Refresh",
-  "version": "1.0.2",
+  "description": "Adds a Refresh command to Finder backgrounds with a brief nostalgic screen flash.",
+  "localizedDescriptions": {
+    "en": "Adds a Refresh command to Finder backgrounds with a brief nostalgic screen flash.",
+    "zh-Hans": "在 Finder 背景菜单中添加“刷新”，并显示短暂的怀旧闪屏效果。",
+    "zh-Hant": "在 Finder 背景選單中加入「重新整理」，並顯示短暫的懷舊閃屏效果。",
+    "ja": "Finder の背景メニューに「更新」を追加し、短い懐かしい画面フラッシュを表示します。",
+    "ko": "Finder 배경 메뉴에 새로 고침을 추가하고 짧은 복고풍 화면 깜박임을 표시합니다.",
+    "de": "Fügt Finder-Hintergrundmenüs „Aktualisieren“ mit einem kurzen nostalgischen Bildschirmblitz hinzu.",
+    "fr": "Ajoute Actualiser aux menus d’arrière-plan du Finder avec un bref flash d’écran nostalgique."
+  },
+  "version": "1.0.3",
   "apiVersion": "1.2",
   "runtime": {
     "kind": "javascript",

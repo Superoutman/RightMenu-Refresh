@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3 - 2026-09-09
+
+- Added a localized one-sentence feature description for the shared RightMenu
+  plugin detail template.
+
 ## 1.0.2 - 2026-09-08
 
 - 将插件图标改为符合宿主统一规范的单色刷新图形，由宿主保留既有容器样式并通用渲染。
