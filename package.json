@@ -7,6 +7,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "build:signed": "node scripts/build.mjs --signed",
+    "package:release": "npm run build:signed && node scripts/package-release.mjs",
     "keygen": "node scripts/generate-signing-key.mjs",
     "typecheck": "tsc --noEmit",
     "test": "npm run typecheck && node --import tsx --test tests/*.test.ts",

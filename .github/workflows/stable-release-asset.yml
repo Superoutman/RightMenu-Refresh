@@ -1,0 +1,34 @@
+name: Attach stable release asset
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  attach-stable-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Copy versioned ZIP to the stable filename
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+          version="${RELEASE_TAG#v}"
+          versioned_name="RightMenu-Refresh-${version}.zip"
+          stable_name="RightMenu-Refresh.zip"
+
+          mkdir release-assets
+          gh release download "$RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern "$versioned_name" \
+            --dir release-assets
+          test -f "release-assets/$versioned_name"
+          cp "release-assets/$versioned_name" "release-assets/$stable_name"
+          gh release upload "$RELEASE_TAG" \
+            "release-assets/$stable_name" \
+            --repo "$GITHUB_REPOSITORY" \
+            --clobber

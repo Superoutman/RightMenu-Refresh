@@ -2,6 +2,8 @@
 
 RightMenu 的独立“刷新”插件。它在 Finder 文件夹空白处和桌面背景菜单中提供“刷新”，仅通过宿主受控的 `ui.flashScreen` 能力显示短暂的怀旧闪屏；不会实际刷新目录，也不会更改任何文件。
 
+[下载最新版本（固定地址）](https://github.com/Superoutman/RightMenu-Refresh/releases/latest/download/RightMenu-Refresh.zip)
+
 ## 版本
 
 - 插件：`1.0.4`
@@ -24,7 +26,9 @@ src/main.ts                       唯一运行入口，只识别 refresh 动作
 types/                            冻结的宿主公开 TypeScript 契约
 assets/icon.svg                   遵循宿主规范的单色刷新图形（容器样式由宿主统一提供）
 scripts/build.mjs                 打包、闭包哈希与 Ed25519 签名
+scripts/package-release.mjs       生成带版本号的 Release ZIP
 scripts/verify-host.mjs           真实宿主校验、安装与 capability 验证
+.github/workflows/                为每个 Release 自动补充固定名称下载附件
 tests/                            动作边界和失败关闭测试
 dist/Refresh.rightmenuplugin      可重复生成、不提交 Git 的安装包
 ```
@@ -53,6 +57,17 @@ npm run verify
 ```
 
 签名包输出到 `dist/Refresh.rightmenuplugin`。私钥仅保存在被 Git 忽略的 `.keys/`，不要提交或分享。
+
+## Release 流程
+
+```bash
+npm run verify
+npm run package:release
+```
+
+使用 `dist/RightMenu-Refresh-<version>.zip` 创建对应的 `v<version>` GitHub Release。
+Release 发布后，仓库工作流会下载该带版本号附件，并在同一 Release 中自动补充
+`RightMenu-Refresh.zip`。因此 README 和宿主可以长期使用固定下载地址，无需随版本修改。
 
 ## 安装
 
