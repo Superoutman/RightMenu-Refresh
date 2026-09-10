@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.4 - 2026-09-09
+
+- 沿用拆分前的说明语义，明确“刷新”仅显示短暂的怀旧闪屏，不会实际刷新目录或更改文件。
+
 ## 1.0.3 - 2026-09-09
 
 - Added a localized one-sentence feature description for the shared RightMenu
